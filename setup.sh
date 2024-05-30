@@ -38,5 +38,8 @@ sed -i '/^# bun/d' "$PROFILE"
 sed -i '/^export BUN_INSTALL=.*$/d' "$PROFILE"
 sed -i '/^export PATH=\$BUN_INSTALL\/bin:\$PATH$/d' "$PROFILE"
 
+echo -e "${YELLOW}[+] Installing atuin${NC}"
+curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh | bash &> /dev/null && suc "Installed atuin" || err "Could not install atuin"
+
 echo -e "${YELLOW}[+] Installing docker${NC}"
 curl -fsSL https://get.docker.com | bash &> /dev/null && suc "Installed docker" || err "Could not install docker"
