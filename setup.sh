@@ -18,17 +18,14 @@ set -eo pipefail
 
 sudo apt update -yqq && sudo apt upgrade -yqq
 
-echo -e "${YELLOW}[+] Installing curl${NC}"
-sudo apt install curl -y &> /dev/null && suc "Installed curl" || err "Could not install curl"
+echo -e "${YELLOW}[+] Installing Common${NC}"
+sudo apt install build-essential gcc unzip curl software-properties-common -y &> /dev/null && suc "Installed Common" || err "Could not install Common"
 
 echo -e "${YELLOW}[+] Installing libfuse2${NC}"
 sudo apt install libfuse2 -y &> /dev/null && suc "Installed libfuse2" || err "Could not install libfuse2"
 
 echo -e "${YELLOW}[+] Installing ca-certificates${NC}"
 sudo apt install ca-certificates -y &> /dev/null && suc "Installed ca-certificates" || err "Could not install ca-certificates"
-
-echo -e "${YELLOW}[+] Installing unzip${NC}"
-sudo apt install unzip -y &> /dev/null && suc "Installed unzip" || err "Could not install unzip"
 
 echo -e "${YELLOW}[+] Installing git${NC}"
 sudo apt install git -y &> /dev/null && suc "Installed git" || err "Could not install git"
