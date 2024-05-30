@@ -21,6 +21,9 @@ sudo apt update -yqq && sudo apt upgrade -yqq
 echo -e "${YELLOW}[+] Installing curl${NC}"
 sudo apt install curl -y &> /dev/null && suc "Installed curl" || err "Could not install curl"
 
+echo -e "${YELLOW}[+] Installing libfuse2${NC}"
+sudo apt install libfuse2 -y &> /dev/null && suc "Installed libfuse2" || err "Could not install libfuse2"
+
 echo -e "${YELLOW}[+] Installing ca-certificates${NC}"
 sudo apt install ca-certificates -y &> /dev/null && suc "Installed ca-certificates" || err "Could not install ca-certificates"
 
