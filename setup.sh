@@ -42,4 +42,4 @@ sed -i '/^export BUN_INSTALL=.*$/d' "$PROFILE"
 sed -i '/^export PATH=\$BUN_INSTALL\/bin:\$PATH$/d' "$PROFILE"
 
 echo -e "${YELLOW}[+] Installing docker${NC}"
-curl -fsSL https://get.docker.com -o get-docker.sh | bash &> /dev/null && suc "Installed docker" || err "Could not install docker"
+curl -fsSL https://get.docker.com | bash &> /dev/null && suc "Installed docker" || err "Could not install docker"
